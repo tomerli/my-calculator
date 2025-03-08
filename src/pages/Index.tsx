@@ -17,7 +17,7 @@ const Index = () => {
       <div className="w-full max-w-md px-4 py-12 animate-fade-up">
         <div className="text-center mb-8">
           <p className="text-gray-600 dark:text-gray-300 max-w-sm mx-auto">
-            A beautiful calculator with a clean interface and smooth animations
+            My Calculator
           </p>
         </div>
         
