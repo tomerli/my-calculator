@@ -1,0 +1,103 @@
+name: Build & deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1  # Ensures full checkout
+          
+      - name: List files
+        run: |
+          pwd
+          ls -la
+
+      - name: Installing Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 21.x
+
+      - name: Installing NPM packages
+        run: npm install
+
+      - name: Building project
+        run: npm run build
+
+      - name: Install SL agent
+        run: npm i slnodejs
+
+      - name: Generate build session Id
+        run: |
+          BUILD_NUMBER=$((GITHUB_RUN_NUMBER))
+          node_modules/slnodejs/lib/cli.js config --tokenfile ./sltoken.txt --appname "Testim-My-Calculator" --build "$BUILD_NUMBER.0" --branch "Main"
+
+      - name: Scan and instrument the build
+        run: node_modules/slnodejs/lib/cli.js scan --tokenfile ./sltoken.txt --buildsessionidfile ./buildSessionId --instrumentForBrowsers --workspacepath ./build --outputpath ./sl_build --scm none --babylonPlugins jsx
+
+      - name: Switch between the builds
+        run: |
+          mv ./build ./build_original
+          mv ./sl_build ./build
+
+      - name: Uploading production-ready build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-files
+          path: ./build
+
+      - name: List files
+        run: |
+          pwd
+          ls -la
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          
+      - name: Downloading artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./build
+
+      - name: List files
+        run: |
+          pwd
+          ls -la
+          
+      - name: Deploying to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          publish_dir: ./build
+          force_orphan: true # Creates a clean, empty branch before pushing
+
+      #- name: Install Dependencies
+      #  run: |
+      #    npm install axios  # Install axios specifically
+      #    npm install fs  # Install fs specifically
+    
+      #- name: Run Testim
+      #  run: |
+      #    npm i -g @testim/testim-cli
+      #    testim -c "./myConfigSL_Calc.js" --suite "Calc"
