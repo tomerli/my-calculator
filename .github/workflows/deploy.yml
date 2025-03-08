@@ -41,7 +41,7 @@ jobs:
       - name: Generate build session Id
         run: |
           BUILD_NUMBER=$((GITHUB_RUN_NUMBER))
-          node_modules/slnodejs/lib/cli.js config --tokenfile ./sltoken.txt --appname "Testim-My-Calculator" --dist "$BUILD_NUMBER.0" --branch "Main"
+          node_modules/slnodejs/lib/cli.js config --tokenfile ./sltoken.txt --appname "Testim-My-Calculator" --build "$BUILD_NUMBER.0" --branch "Main"
 
       - name: Scan and instrument the build
         run: node_modules/slnodejs/lib/cli.js scan --tokenfile ./sltoken.txt --buildsessionidfile ./buildSessionId --instrumentForBrowsers --workspacepath ./dist --outputpath ./sl_dist --scm none --babylonPlugins jsx
