@@ -13,17 +13,17 @@ const Index = () => {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900 transition-colors duration-500">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 transition-colors duration-500">
       <div className="w-full max-w-md px-4 py-12 animate-fade-up">
         <div className="text-center mb-8">
-          <p className="text-gray-400 dark:text-gray-300 max-w-sm mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-sm mx-auto">
             A beautiful calculator with a clean interface and smooth animations
           </p>
         </div>
         
         <Calculator className="shadow-2xl hover:shadow-3xl transition-shadow duration-500 pulse-glow" />
         
-        <div className="mt-8 text-center text-sm text-gray-400 dark:text-gray-300">
+        <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-300">
           <p>Press keyboard keys to interact with the calculator</p>
         </div>
       </div>
