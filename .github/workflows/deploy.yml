@@ -1,3 +1,4 @@
+
 name: Build & deploy
 
 on:
@@ -34,6 +35,8 @@ jobs:
 
       - name: Building project
         run: npm run build
+        env:
+          NODE_ENV: production
 
       - name: Install SL agent
         run: npm i slnodejs
@@ -91,3 +94,4 @@ jobs:
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           publish_dir: ./dist
           force_orphan: true # Creates a clean, empty branch before pushing
+          cname: ${{ secrets.CNAME }}
