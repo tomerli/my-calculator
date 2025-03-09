@@ -1,0 +1,77 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Calculator</title>
+    <meta name="description" content="A beautiful calculator with a clean interface" />
+    <meta name="author" content="Lovable" />
+    <meta property="og:image" content="/og-image.png" />
+    <script>
+	var slConfig = {
+  "customerId": "tricentis-demo",
+  "appName": "Testim-My-Calculator",
+  "buildName": "11.0",
+  "branchName": "Main",
+  "server": "https://tricentis-demo.sealights.co/api",
+  "token": "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL1BST0QtUE9DLmF1dGguc2VhbGlnaHRzLmlvLyIsImp3dGlkIjoiUFJPRC1QT0MsbmVlZFRvUmVtb3ZlLEFQSUdXLTZjYjczN2IyLTE2YzYtNDI2Zi05YTJhLTQwMzc0MmRlMGQ4YSwxNzIyNzgzODk0MTQ4Iiwic3ViamVjdCI6InRyaWNlbnRpcy1kZW1vQGFnZW50IiwiYXVkaWVuY2UiOlsiYWdlbnRzIl0sIngtc2wtcm9sZSI6ImFnZW50IiwieC1zbC1zZXJ2ZXIiOiJodHRwczovL3RyaWNlbnRpcy1kZW1vLnNlYWxpZ2h0cy5jby9hcGkiLCJzbF9pbXBlcl9zdWJqZWN0IjoiIiwiaWF0IjoxNzIyNzgzODk0fQ.b_N4YB0IMzxEeW21lYQS5OHmBhV7nnqkEaZArlq_biT3BHtX_yoXRULKB61f58h2n2XzBK1QmU-VkavfIAbVmyYUaaQYmZ6l0CKoEhgqonveuonfINzp9W_th9rSPxThU4AZvimrPPB8h0MQ3T2eZa2eC8eTJ4rd-TKX8wlql7ENv-rNpM3ppk8RN31K4zRjcvf9zrtOVvQwTRnusEYjcGvB_GE6uqc5XbIpUkrNssD8MF4NbQuHThvDuhZshnJjPbU9kU66z5ocx5hAXITKLe9WBjDABfm9qkmUTk9GWQOQtvBQ9jYgJZ7v7Kvf7InmgJkzvpMueSa4TJ6kNrG1n_dUGGdROSkzPqUsDN4Apte_ZXiPm4V32-RfDQ4GrjzJFeiRfX0VWr5kP33qSqMADpXQiblJu6pfCis3mlqgOtsWlcYYgFL_TGxv3Mup8pnaxCHKNYKW8NUzJwGUhPzqfghBoq46rnZhcO9o1m4DdXB9PikpWdDZjGOt8VAo2xsAS7FMWXbmZ2hlHlH20T5GAm08tBkVQMLADEpPf4QijXbQroddmvlA7Ewbbf7KJVxvyMPzDbzNpnwfm53o3jzE2laMwetUIIxN8ASvtmBFD-_wJlXNa2jeFAL01Linte5jArLuPnMRNFDCBC3n0aibtilRLfgJnPJ4eF5n3zkw6d8",
+  "buildSessionId": "ddd5f449-84d1-4df4-ba44-d964d8045a3e",
+  "enabled": true,
+  "workspacepath": "/home/runner/work/my-calculator/my-calculator/dist/",
+  "maxItemsInQueue": 500,
+  "registerShutdownHook": true,
+  "interval": 10,
+  "resolveWithoutHash": true,
+  "delayShutdownInSeconds": 30,
+  "isUseNewUniqueId": false,
+  "footprintsEnableV6": true,
+  "footprintsBufferThresholdMb": 10,
+  "footprintsCollectIntervalSecs": 10,
+  "footprintsSendIntervalSecs": 10,
+  "executionQueryIntervalSecs": 10,
+  "footprintsQueueSize": 2,
+  "blockBrowserHttpTraffic": false,
+  "enableOpenTelemetry": false,
+  "footprintsMapping": "agent",
+  "removeSensitiveData": false,
+  "experimentalSizeReduction": false,
+  "splitPreambleIntoFile": false,
+  "preambleFileName": "sl-preamble-config.js",
+  "preambleFileUrl": "",
+  "excludeTokenFromBrowserConfig": false,
+  "embedCorrectUniqueId": false
+};
+window.$Sealights = window.$Sealights || {};
+if(window && window.$SealightsAgent){
+   window.$SealightsAgent.createInstance(slConfig)
+} else {
+   window.$Sealights.components = window.$Sealights.components || {};
+   window.$Sealights.components["ddd5f449-84d1-4df4-ba44-d964d8045a3e"] = slConfig;   document.addEventListener("DOMContentLoaded", function(event) {
+       document.body.dataset.components = JSON.stringify(window.$Sealights.components || {});
+   });}
+if(!window.$Sealights.scriptAdded && !window.$Sealights.skipSlAgent) {
+   var script   = document.createElement("script");
+   script.type  = "text/javascript";
+   script.src   = "https://tricentis-demo.sealights.co/api/v1/agents/browser/recommended?redirect=1&customerId=tricentis-demo";
+   var head     = document.head || document.getElementsByTagName && document.getElementsByTagName('head')[0]
+   if (head) { head.appendChild(script); window.$Sealights.scriptAdded = true; } else { /* Unsupported/restricted browser */ }
+}
+</script>
+<script>
+	var cov_1n2kd1usok=function(){var path="/home/runner/work/my-calculator/my-calculator/dist/index.html",hash="1e507ccda7a15da5ff3874ba9aeca5cb50afc006",Function=function(){}.constructor,global=new Function('return this')(),gcv="$SealightsCoverage_ddd5f449-84d1-4df4-ba44-d964d8045a3e",coverageData={path:"/home/runner/work/my-calculator/my-calculator/dist/index.html",statementMap:{"0":{start:{line:15,column:6},end:{line:24,column:25}},"1":{start:{line:16,column:8},end:{line:23,column:9}},"2":{start:{line:17,column:24},end:{line:19,column:22}},"3":{start:{line:18,column:12},end:{line:18,column:43}},"4":{start:{line:20,column:10},end:{line:22,column:12}}},fnMap:{"0":{name:"(anonymous_0)",decl:{start:{line:15,column:7},end:{line:15,column:8}},loc:{start:{line:15,column:19},end:{line:24,column:7}},line:15},"1":{name:"(anonymous_1)",decl:{start:{line:17,column:57},end:{line:17,column:58}},loc:{start:{line:17,column:69},end:{line:19,column:11}},line:17}},branchMap:{"0":{loc:{start:{line:16,column:8},end:{line:23,column:9}},type:"if",locations:[{start:{line:16,column:8},end:{line:23,column:9}},{start:{line:16,column:8},end:{line:23,column:9}}],line:16}},s:{"0":0,"1":0,"2":0,"3":0,"4":0},f:{"0":0,"1":0},b:{"0":[0,0]},_coverageSchema:"43e27e138ebf9cfc5966b082cf9a028302ed4184"},coverage=global[gcv]||(global[gcv]={});if(coverage[path]&&coverage[path].hash===hash){return coverage[path];}coverageData.hash=hash;return coverage[path]=coverageData;}();cov_1n2kd1usok.s[0]++;
+</script>
+<script type="text/javascript"> // Single Page Apps for GitHub Pages
+// MIT License
+// https://github.com/rafgraph/spa-github-pages
+(function(l){cov_1n2kd1usok.f[0]++;cov_1n2kd1usok.s[1]++;if(l.search[1]==='/'){cov_1n2kd1usok.b[0][0]++;var decoded=(cov_1n2kd1usok.s[2]++,l.search.slice(1).split('&').map(function(s){cov_1n2kd1usok.f[1]++;cov_1n2kd1usok.s[3]++;return s.replace(/~and~/g,'&');}).join('?'));cov_1n2kd1usok.s[4]++;window.history.replaceState(null,null,l.pathname.slice(0,-1)+decoded+l.hash);}else{cov_1n2kd1usok.b[0][1]++;}})(window.location);</script>
+    <script type="module" crossorigin src="/assets/index-arJokhu9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DmwzOVxT.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </body>
+</html>
